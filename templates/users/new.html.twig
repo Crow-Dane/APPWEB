@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un nouvel utilisateur{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2">
+                {# Sidebar inclusion, if necessary #}
+                {# {{ include('sidebar.html.twig') }} #}
+            </div>
+            <div class="col-md-10">
+                <h1 class="text-center my-4 mb-4">Créer un nouvel utilisateur</h1>
+
+
+                <form method="post">
+                    {{ form_start(form) }}
+                    <div class="form-group">
+                        {{ form_row(form.nom, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.prenom, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.roles, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(form.password, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Créer</button>
+                    <a href="{{ path('app_users_index')}}" class="btn btn-secondary mt-3">Retour à la liste</a>
+
+                    {{ form_end(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <h1>Statistique par Diplôme</h1>
+    <div id="diplome-chart-container" style="width: 100%; height: 400px;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        var options = {
+            series: [
+                {
+                    name: 'Employé',
+                    data: {{ data.employe | json_encode | raw }},
+                    color: '#008FFB'
+                },
+                {
+                    name: 'Chômage',
+                    data: {{ data.chomage | json_encode | raw }},
+                    color: '#FF0000'
+                }
+            ],
+            chart: {
+                type: 'bar',
+                height: 400
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: true,
+                }
+            },
+            xaxis: {
+                categories: {{ data.labels | json_encode | raw }}
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#diplome-chart-container"), options);
+        chart.render();
+    </script>
+{% endblock %}
+ 

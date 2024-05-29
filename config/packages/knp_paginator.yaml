@@ -1,0 +1,12 @@
+knp_paginator:
+    page_range: 5 # Nombre de pages affichées dans la pagination
+    default_options:
+        page_name: page # Nom du paramètre de la page
+        sort_field_name: sort # Nom du paramètre pour le tri
+        sort_direction_name: direction # Nom du paramètre pour la direction du tri
+        distinct: true # Assurez-vous d'avoir des résultats distincts, utile lorsque des requêtes ORM utilisent des déclarations GROUP BY
+        filter_field_name: filterField # Nom du paramètre pour le champ de filtre
+        filter_value_name: filterValue # Nom du paramètre pour la valeur de filtre
+    template:
+        pagination: '@KnpPaginator/Pagination/bootstrap_v5_pagination.html.twig' # template for bootstrap 4
+        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig'

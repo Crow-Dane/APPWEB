@@ -1,0 +1,64 @@
+{# templates/manage/_form.html.twig #}
+
+{{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                {{ form_label(form.nom, 'Nom') }}
+                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.prenom, 'Prénom') }}
+                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.tel, 'Téléphone') }}
+                {{ form_widget(form.tel, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.anneeSortie, 'Année de sortie') }}
+                {{ form_widget(form.anneeSortie, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.posteOccuper, 'Poste occupé') }}
+                {{ form_widget(form.posteOccuper, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.user, 'Utilisateur') }}
+                {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                {{ form_label(form.Filiere, 'Filière') }}
+                {{ form_widget(form.Filiere, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.diplome, 'Diplôme') }}
+                {{ form_widget(form.diplome, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.contrat, 'Contrat') }}
+                {{ form_widget(form.contrat, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group mb-3">
+                {{ form_label(form.statut, 'Statut') }}
+                {{ form_widget(form.statut, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-actions mt-3">
+        <button type="submit" class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+        <a href="{{ path('app_manage_index') }}" class="btn btn-secondary">Retour à la liste</a>
+    </div>
+{{ form_end(form) }}

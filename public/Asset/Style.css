@@ -1,0 +1,482 @@
+
+body {
+	background: #f1e7e7;
+	font-family: 'Varela Round', sans-serif;
+}
+.navbar {
+	color: #ffffff;
+	background: #926dde !important;
+	padding: 5px 16px;
+	border-radius: 0;
+	border: none;
+	box-shadow: 0 0 4px rgba(0,0,0,.1);
+}
+.navbar img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin-right: 10px;
+}
+.navbar .navbar-brand {
+	color: #efe5ff;
+	padding-left: 0;
+	padding-right: 50px;
+	font-size: 24px;		
+}
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+	color: #fff;
+}
+.navbar .navbar-brand i {
+	font-size: 25px;
+	margin-right: 5px;
+}
+.search-box {
+	position: relative;
+}	
+.search-box input {
+	padding-right: 35px;
+	min-height: 38px;
+	border: none;
+	background: #faf7fd;
+	border-radius: 3px !important;
+}
+.search-box input:focus {		
+	background: #fff;
+	box-shadow: none;
+}
+.search-box .input-group-addon {
+	min-width: 35px;
+	border: none;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	z-index: 9;
+	padding: 10px 7px;
+	height: 100%;
+}
+.search-box i {
+	color: #a0a5b1;
+	font-size: 19px;
+}
+.navbar .nav-item i {
+	font-size: 18px;
+}
+.navbar .nav-item span {
+	position: relative;
+	top: 3px;
+}
+
+.navbar .navbar-nav > a {
+	color: #efe5ff;
+	padding: 8px 15px;
+	font-size: 14px;		
+}
+.navbar .navbar-nav > a:hover, .navbar .navbar-nav > a:focus {
+	color: #fff;
+	text-shadow: 0 0 4px rgba(255,255,255,0.3);
+}
+.navbar .navbar-nav > a > i {
+	display: block;
+	text-align: center;
+}
+.navbar .dropdown-item i {
+	font-size: 16px;
+	min-width: 22px;
+}
+.navbar .dropdown-item .material-icons {
+	font-size: 21px;
+	line-height: 16px;
+	vertical-align: middle;
+	margin-top: -2px;
+}
+.navbar .nav-item.open > a, .navbar .nav-item.open > a:hover, .navbar .nav-item.open > a:focus {
+	color: #fff;
+	background: none !important;
+}
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .dropdown-menu a {
+	color: #777 !important;
+	padding: 8px 20px;
+	line-height: normal;
+	font-size: 15px;
+}
+.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:focus {
+	color: #333 !important;
+	background: transparent !important;
+}
+.navbar .navbar-nav .active a, .navbar .navbar-nav .active a:hover, .navbar .navbar-nav .active a:focus {
+	color: #fff;
+	text-shadow: 0 0 4px rgba(255,255,255,0.2);
+	background: transparent !important;
+}
+.navbar .navbar-nav .user-action {
+	padding: 9px 15px;
+	font-size: 15px;
+}
+.navbar .navbar-toggle {
+	border-color: #fff;
+}
+.navbar .navbar-toggle .icon-bar {
+	background: #fff;
+}
+.navbar .navbar-toggle:focus, .navbar .navbar-toggle:hover {
+	background: transparent;
+}
+.navbar .navbar-nav .open .dropdown-menu {
+	background: #faf7fd;
+	border-radius: 1px;
+	border-color: #faf7fd;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.navbar .divider {
+	background-color: #e9ecef !important;
+}
+@media (min-width: 1200px){
+	.form-inline .input-group {
+		width: 350px;
+		margin-left: 30px;
+	}
+}
+@media (max-width: 1199px){
+	.navbar .navbar-nav > a > i {
+		display: inline-block;			
+		text-align: left;
+		min-width: 30px;
+		position: relative;
+		top: 4px;
+	}
+	.navbar .navbar-collapse {
+		border: none;
+		box-shadow: none;
+		padding: 0;
+	}
+	.navbar .navbar-form {
+		border: none;			
+		display: block;
+		margin: 10px 0;
+		padding: 0;
+	}
+	.navbar .navbar-nav {
+		margin: 8px 0;
+	}
+	.navbar .navbar-toggle {
+		margin-right: 0;
+	}
+	.input-group {
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+.sidebar {
+
+	background-color: #7caad8;
+    height: 100vh; /* Hauteur de la fenêtre du navigateur */
+	max-width: 270px;: ;
+    position: fixed; /* Sidebar position fixe */
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+    background-color: #f8f9fa; /* Couleur de fond du sidebar */
+    border-right: 1px solid #dee2e6; /* Bordure droite pour séparer du contenu principal */
+    padding-top: 20px; /* Rembourrage supérieur */
+	margin-top: auto ;
+}
+
+.sidebar-sticky {
+    position: relative;
+    top: 0;
+    height: calc(100vh - 56px); /* Hauteur de la barre de navigation supérieure si vous en avez une */
+    padding-bottom: 48px; /* Ajouter un rembourrage bas si nécessaire */
+    overflow-x: hidden; /* Masquer le défilement horizontal */
+    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+}
+
+.nav-item {
+    padding: 8px 20px; /* Rembourrage des éléments de menu */
+}
+
+/*
+.nav-link {
+    color: #343a40; // Couleur du texte des liens 
+}
+
+*/
+.nav-link:hover {
+    background-color: #7caad8; /* Couleur de fond au survol */
+}
+
+.dropdown-menu {
+    position: static; /* Position statique pour afficher le menu déroulant correctement */
+    background-color: #e0c2c2; /* Couleur de fond du menu déroulant */
+    border: 1px solid #ccc; /* Bordure du menu déroulant */
+}
+
+
+/* Ajoutez ces styles à votre fichier CSS principal ou un fichier séparé */
+
+/* Ajouter une transition pour l'ouverture et la fermeture de la liste déroulante */
+.dropdown-menu {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0; /* Commencez par rendre la liste déroulante invisible */
+    transform: translateY(-10px); /* Déplacez la liste déroulante vers le haut */
+}
+
+/* Appliquer l'opacité et la transformation lorsqu'il est ouvert */
+.dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ajouter une transition pour le survol des éléments de menu */
+.dropdown-item {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Appliquer un changement de couleur de fond au survol */
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+
+
+.custom-width {
+    width: 82%; /* Par exemple, ajustez la largeur en fonction de vos besoins */
+    margin: 0 auto; /* Pour centrer le contenu */
+}
+
+
+
+
+
+/* assets/styles.css */
+
+.thead-custom th {
+    background-color: #7260da;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table td, .table th {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table .btn {
+    margin: 0 2px;
+}
+
+.table .btn i {
+    margin-right: 0;
+}
+
+.form-inline .form-group {
+    margin-right: 15px;
+}
+
+.form-inline .form-control {
+    width: auto;
+}
+
+.form-inline .form-control[placeholder="Recherche..."] {
+    width: 250px;
+}
+
+.material-icons {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.form-inline {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+
+
+
+/* assets/styles.css */
+
+/* Ajout d'un espacement entre les champs de formulaire */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Boutons alignés à droite */
+.form-group.mt-3 {
+    text-align: right;
+}
+
+/* Taille de champ uniforme */
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+/* assets/styles.css */
+
+/* Ajout de marges entre les champs de formulaire */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Taille uniforme des champs de formulaire */
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Boutons alignés à droite */
+.form-actions {
+    text-align: right;
+}
+
+
+
+
+/* assets/styles.css */
+
+/* Ajout de marges entre les champs de formulaire */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Taille uniforme des champs de formulaire */
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Boutons alignés à droite */
+.form-actions {
+    text-align: right;
+}
+
+/* S'assurer que le contenu principal est bien décalé par rapport à la sidebar */
+.container .row .col-md-10 {
+    margin-left: auto;
+    padding-left: 15px;
+}
+
+/* Optional: Add padding to the sidebar column */
+.container .row .col-md-2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+
+/* assets/styles.css */
+
+/* Ajout de marges entre les champs de formulaire */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Taille uniforme des champs de formulaire */
+.form-control {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Boutons alignés à droite */
+.form-actions {
+    text-align: right;
+}
+
+/* S'assurer que le contenu principal est bien décalé par rapport à la sidebar */
+.container .row .col-md-10 {
+    margin-left: auto;
+    padding-left: 15px;
+}
+
+/* Optional: Add padding to the sidebar column */
+.container .row .col-md-2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+
+
+/* Assurez-vous que le contenu principal est bien décalé par rapport à la sidebar */
+.container .row .col-md-10 {
+    margin-left: auto;
+    padding-left: 15px;
+}
+
+/* Optional: Add padding to the sidebar column */
+.container .row .col-md-2 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+}
+
+.page_404  img{ width:100%;}
+
+.four_zero_four_bg{
+ 
+ background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+    height: 400px;
+    background-position: center;
+ }
+ 
+ 
+ .four_zero_four_bg h1{
+ font-size:80px;
+ }
+ 
+  .four_zero_four_bg h3{
+			 font-size:80px;
+			 }
+			 
+			 .link_404{			 
+	color: #fff!important;
+    padding: 10px 20px;
+    background: #39ac31;
+    margin: 20px 0;
+    display: inline-block;}
+	.contant_box_404{ margin-top:-50px;}

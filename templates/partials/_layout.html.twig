@@ -1,0 +1,55 @@
+{# templates/_layout.html.twig #}
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Layout{% endblock %}</title>
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('Asset/Style.css') }}">
+
+        {% block stylesheets %}
+            {# Include your CSS files here #}
+            {# <link rel="stylesheet" href="{{ asset('css/app.css') }}">  #}
+        {% endblock %} 
+    </head>
+    <body>
+        <header>
+            {# Header content here #}
+        </header>
+
+        <nav>
+            {# Navigation bar here #}
+        </nav>
+
+        <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-md-4">
+            {% block content %}
+
+                <div class="container-fluid">
+                    <div class="row">
+                        {% include 'partials/_sidebar.html.twig' %}
+                    </div>
+                </div>
+                    
+            
+            {% endblock %}
+        </main>
+
+        <footer>
+                {% include 'partials/_footer.html.twig' %}
+        </footer>
+
+            
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        {% block javascripts %}
+            {# Include your JS files here #}
+        {#    <script src="{{ asset('js/app.js') }}"></script>  #}
+        {% endblock %}
+    </body>
+</html>

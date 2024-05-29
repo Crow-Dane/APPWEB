@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Tableau de bord
+{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5 ml-5">
+    <h1 class="mb-4">Tableau de bord</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Total d'étudiants</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbTotal }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Chômage</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbChomage }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">Employé</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbEmploye }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">DUT</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbDut }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Licence</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbLicence }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
+                <div class="card-header">Master</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbMaster }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Fonctionnaire</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbFonctionnaire }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Entrepreneur</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbEntrepreneur }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-header">Auto Entrepreneur</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ nbAutoEntrepreneur }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

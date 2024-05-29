@@ -1,0 +1,51 @@
+{# templates/dashboard.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <!-- La sidebar est incluse dans base.html.twig et devrait occuper 2 colonnes -->
+            <div class="col-md-2">
+                <!-- Placeholder pour la sidebar si besoin -->
+            </div>
+            <!-- Contenu principal -->
+            <div class="col-md-10">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="shadow p-3 mb-5 background:#f1e7e7; rounded">
+                            {% include 'route/index.html.twig' with {'nbChomage': nbChomage} %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="shadow p-3 mb-5  background:#f1e7e7; rounded">
+                            {% include 'bar_charts2/index.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 mb-4">
+                        <div class="shadow p-3  background:#f1e7e7; rounded">
+                            {% include 'bar_charts/index.html.twig' %}
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="shadow p-3 mb-5 background:#f1e7e7; rounded">
+                            {% include 'charts/index.html.twig' %}
+                        </div> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shadow p-3 mb-5  background:#f1e7e7; rounded">
+                            {% include 'pages/tables.html.twig' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

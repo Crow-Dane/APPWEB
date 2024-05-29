@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+                <a href="#" class="navbar-brand"><i class="fa fa-cube"></i><b>IUFP</b>-SUIVI</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+            <ul class="nav flex-column mt-4">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_home') }}">
+                        <i data-feather="home"></i>
+                        Dashboards
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="file-text"></i>
+                        Pages
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="pagesDropdown1">
+                        <a class="dropdown-item" href="{{ path('app_users_index') }}">Gestion des utilisateurs</a>
+                        <a class="dropdown-item" href="{{ path('app_manage_index') }}">Gestion des Étudiants</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i data-feather="user"></i>
+                        Profil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="pagesDropdown2">
+                        {% if app.user %}
+                            <a class="dropdown-item" href="#">Connecté(e) en tant que: {{ app.user.nom }}</a>
+                            <a class="dropdown-item" href="#">Email : {{ app.user.email }}</a>
+                            <a class="dropdown-item" href="#">Rôles: {{ app.user.roles | join(', ') }}</a>
+                            <a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+                        {% else %}
+                            <a class="dropdown-item" href="{{ path('app_login') }}">Se connecter</a>
+                        {% endif %}
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>

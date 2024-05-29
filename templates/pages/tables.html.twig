@@ -1,0 +1,91 @@
+{# templates/manage/index.html.twig #}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+    <div class = "center" >
+
+        <div class = "container mb-3">
+        
+                                   <h1>Liste des anciens étudiants</h1>
+                 <a href="{{ path('app_manage_new') }}" class="btn btn-primary">Ajouter un ancien étudiant</a>
+
+                <!-- Section de recherche et de tri -->
+                <form action="{{ path('app_manage_index') }}" method="get"> {# Modifier la méthode en GET #}
+                    <input type="text" name="q" placeholder="Recherche...">
+                    <select name="tri">
+                        <option value="">Trier par...</option>
+                        <option value="nom">Nom</option>
+                        <option value="prenom">Prénom</option>
+                        <option value="posteOccuper">Poste Occupé</option>
+                        <option value="anneeSortie">Année de sortie</option>
+                        <option value="diplome">Diplôme</option> {# Nouvelle option pour trier par diplôme #}
+                        <option value="filiere">Filière</option> {# Nouvelle option pour trier par filière #}
+                        <option value="statutTravail">Statut de travail</option> {# Nouvelle option pour trier par statut de travail #}
+                        <option value="contrat">Contrat</option> {# Nouvelle option pour trier par contrat #}
+                        <!-- Ajoutez d'autres options de tri selon vos besoins -->
+                    </select>
+                    <button type="submit">Rechercher et Trier</button>
+                </form>
+            </div>
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Téléphone</th>
+                        <th>Année de sortie</th>
+                        <th>Poste occupé</th>
+                        <th>Filière</th>
+                        <th>Diplôme</th>
+                        <th>Contrat</th>
+                        <th>Statut</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ancien_etudiant in ancien_etudiants %}
+                        <tr>
+                            <td>{{ ancien_etudiant.id }}</td>
+                            <td>{{ ancien_etudiant.nom }}</td>
+                            <td>{{ ancien_etudiant.prenom }}</td>
+                            <td>{{ ancien_etudiant.tel }}</td>
+                            <td>{{ ancien_etudiant.anneeSortie ? ancien_etudiant.anneeSortie|date('Y-m-d') : '' }}</td>
+                            <td>{{ ancien_etudiant.posteOccuper }}</td>
+                            <td>
+                                {% for filiere in ancien_etudiant.Filiere %}
+                                    {{ filiere.nom }}
+                                {% endfor %}
+                            </td>
+                            <td>
+                                {% for diplome in ancien_etudiant.diplome %}
+                                    {{ diplome.nom }}
+                                {% endfor %}
+                            </td>
+                            <td>{{ ancien_etudiant.contrat ? ancien_etudiant.contrat.typeContrat : '' }}</td>
+                            <td>{{ ancien_etudiant.statut ? ancien_etudiant.statut.typeStatut : '' }}</td>
+                        <td>
+                                        <a href="{{ path('app_manage_show', {'id': ancien_etudiant.id}) }}" class="btn btn-info">Afficher</a>
+                                        <a href="{{ path('app_manage_edit', {'id': ancien_etudiant.id}) }}" class="btn btn-warning">Modifier</a>
+                                        <form action="{{ path('app_manage_delete', {'id': ancien_etudiant.id}) }}" method="post" style="display: inline;">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ ancien_etudiant.id) }}">
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet étudiant ?')">Supprimer</button>
+                                        </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+                {# Afficher les liens de pagination #}
+                <div class="pagination justify-content-center">
+                    {{ knp_pagination_render(ancien_etudiants) }}
+                </div>
+
+    </div>
+{% endblock %}
+ 

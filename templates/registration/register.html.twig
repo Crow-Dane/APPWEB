@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ asset('images/pug.jpg') }}" alt="Pug" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h2>Creer un nouveau compte</h2>
+            <form method="post">
+                <div class="form-group">
+                    <label for="firstName">Nom</label>
+                    {{ form_widget(registrationForm.nom, {'attr': {'class': 'form-control', 'placeholder': 'First Name'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Prénom</label>
+                    {{ form_widget(registrationForm.prenom, {'attr': {'class': 'form-control', 'placeholder': 'Last Name'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de Passe</label>
+                    {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Password'}}) }}
+                </div>
+              
+                <button type="submit" class="btn btn-primary">Register Account</button>
+                <button type="button" class="btn btn-danger">Register with Google</button>
+                <button type="button" class="btn btn-primary">Register with Facebook</button>
+            </form>
+            <a href="">Me Connecter</a>
+        </div>
+    </div>
+</div> 
+{% endblock %}
+

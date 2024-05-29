@@ -1,0 +1,36 @@
+{% block title %}Bar Charts{% endblock %}
+
+{% block body %}
+<div class="container">
+    <canvas id="barChart"></canvas>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script>
+    var ctx = document.getElementById('barChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ filiereData.labels|json_encode|raw }},
+            datasets: [{
+                label: 'Employé',
+                backgroundColor: 'blue',
+                data: {{ filiereData.employeCount|json_encode|raw }}
+            }, {
+                label: 'Chômage',
+                backgroundColor: 'red',
+                data: {{ filiereData.chomageCount|json_encode|raw }}
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+{% endblock %}
