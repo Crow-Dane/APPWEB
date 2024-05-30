@@ -50,6 +50,7 @@ class ManageController extends AbstractController
      
     // Modifiez la méthode index pour appeler la méthode filter lorsqu'une requête de recherche est soumise
     #[Route('/', name: 'app_manage_index', methods: ['GET', 'POST'])]
+     #[Security('is_granted("ROLE_ADMIN")')]
     public function index(Request $request, AncienEtudiantRepository $ancienEtudiantRepository, PaginatorInterface $paginator): Response
     {
         $query = $request->query->get('q');
@@ -83,6 +84,7 @@ class ManageController extends AbstractController
         
 
     #[Route('/new', name: 'app_manage_new', methods: ['GET', 'POST'])]
+     #[Security('is_granted("ROLE_ADMIN")')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $ancienEtudiant = new AncienEtudiant();
@@ -112,6 +114,7 @@ class ManageController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'app_manage_edit', methods: ['GET', 'POST'])]
+     #[Security('is_granted("ROLE_ADMIN")')]
     public function edit(Request $request, AncienEtudiant $ancienEtudiant, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(AncienEtudiantType::class, $ancienEtudiant);
@@ -130,6 +133,7 @@ class ManageController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_manage_delete', methods: ['POST'])]
+     #[Security('is_granted("ROLE_ADMIN")')]
     public function delete(Request $request, AncienEtudiant $ancienEtudiant, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$ancienEtudiant->getId(), $request->request->get('_token'))) {
