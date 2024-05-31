@@ -2,6 +2,44 @@ Une application web de GESTION D'ETUDIANT pour l'IUFP
 
 cahier de charge
 
+#LIEN GITHUB du projet
+
+https://github.com/Crow-Dane/APPWEB/tree/master
+
+#iNSTALLER le logiciel d'enregistrement de l'ecran pour pouvoir visionner la video
+https://www.freescreenrecording.com/
+
+Email: hanneamadou22       //Pour un compte administrateur
+Password: Hanne22
+
+Email: user1@example.com    //Pour un compte utilisateur
+Password: userpassword
+
+//Quelques commandes SYMFONY CLI ou  PHP
+
+ php bin/console doctrine:database:create // CREER UNE BASE DE DONNEE
+ 
+ symfony console make:migration   // INITIALISE UNE MIGRATION
+
+ symfony console doctrine:migrations:migrate // FAIRE UNE MIGRATION
+
+ php bin/console cache:pool:clear --all    // VIDER LE CACHE
+                                                       --dev  // VIDER LE CACHE EN DEVELOPPEMENT
+                                                       --prod // VIDER LE CACHE EN PRODUCTION
+
+
+
+GROUPE1
+CHERIF SOULEMANE HAÏDARA
+AMADOU HANNE 
+HAMIDOU SACKO
+NIAGA SIDIBE
+SINE ZERBO
+
+
+GESTION D'ETUDIANT
+
+
 1- Authentification d'un utilisateur accédant à l'application
 
 2- Authentification d'un administrateur accédant à l'application
@@ -41,7 +79,7 @@ Contrat, Adresse du Lieu de Travail, .....)
 
 
 
-1- Affichage des statistiques (nombre d'étudiants total, pourcentages des étudiants au chômage, 
+20- Affichage des statistiques (nombre d'étudiants total, pourcentages des étudiants au chômage, 
 pourcentage des étudiants ayant trouvé un emploi,
 pourcentage des étudiants en auto-entrepreneuriat, 
 pourcentage des étudiants entrepreneur, 
@@ -64,6 +102,5 @@ pourcentage des étudiants fonctionnaire,
 2- Affichage de la liste des anciens étudiants par filière (FILIRE)
 
 3- Affichage de la liste des anciens étudiants par filière et par diplôme obtenu (DUT ou Licence) (RECHERCHE ET TRIE)
-
 
 
